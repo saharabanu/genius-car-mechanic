@@ -5,7 +5,7 @@ var cors = require('cors')
 require('dotenv').config();
 const app =express();
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json())
 
@@ -47,7 +47,13 @@ async function run() {
        res.json(result)
      
     })
-    // dlete api  
+    // update api 
+    app.put('/services/:id',async(req,res)=>{
+        const id = req.body;
+        console.log('updated data added',id)
+        res.send('getting soon')
+    })
+    // delete api  
     app.delete('/services/:id',async(req,res)=>{
         const id = req.params.id;
         const query = { _id:ObjectId(id) };

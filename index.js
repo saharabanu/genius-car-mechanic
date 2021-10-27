@@ -47,12 +47,7 @@ async function run() {
        res.json(result)
      
     })
-    // update api 
-    app.put('/services/:id',async(req,res)=>{
-        const id = req.body;
-        console.log('updated data added',id)
-        res.send('getting soon')
-    })
+   
     // delete api  
     app.delete('/services/:id',async(req,res)=>{
         const id = req.params.id;
